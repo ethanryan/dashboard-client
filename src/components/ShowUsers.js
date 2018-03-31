@@ -6,7 +6,7 @@ const ShowUsers = (props) => {
   return(
 
     <div key={props.id} className='center'>
-      ShowUsers will do here!!!
+      ShowUsers will be here!!!
     </div>
   )
 }
