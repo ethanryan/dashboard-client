@@ -1,4 +1,8 @@
-import React, {Component} from 'react'
+//import React, {Component} from 'react'
+import React from 'react'
+
+import ShowUsers from '../components/ShowUsers'
+
 
 const DashboardContainer = (props) => {
 
@@ -6,7 +10,11 @@ const DashboardContainer = (props) => {
   return(
 
     <div key={props.id} className='center'>
-      DashboardContainer will do here!!!
+      <h1>
+        DashboardContainer is here!!!
+      </h1>
+
+      <ShowUsers />
     </div>
   )
 }
