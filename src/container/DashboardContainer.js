@@ -1,22 +1,37 @@
-//import React, {Component} from 'react'
-import React from 'react'
+import React, {Component} from 'react'
 
 import ShowUsers from '../components/ShowUsers'
 
+import * as api from '../api'
 
-const DashboardContainer = (props) => {
+class DashboardContainer extends Component {
+  constructor() {
+    super()
+    this.state = {
+      users: [],
+    }
+  }
+  componentDidMount() {
+    api.getUsers()
+    // .then (user => this.setState({
+    //   users: user
+    // }) )
+  }
 
-  console.log('hello from DashboardContainer')
-  return(
+  render() {
+    console.log('0. state from DashboardContainer: ', this.state)
+    return(
+      <div key={this.props.id} className='center'>
+        <h1>
+          DashboardContainer is here!!!
+        </h1>
 
-    <div key={props.id} className='center'>
-      <h1>
-        DashboardContainer is here!!!
-      </h1>
+        <ShowUsers />
 
-      <ShowUsers />
-    </div>
-  )
+      </div>
+    )
+  }
+
 }
 
 export default DashboardContainer
