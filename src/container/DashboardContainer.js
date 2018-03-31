@@ -13,9 +13,9 @@ class DashboardContainer extends Component {
   }
   componentDidMount() {
     api.getUsers()
-    // .then (user => this.setState({
-    //   users: user
-    // }) )
+    .then (allUsers => this.setState({
+      users: allUsers
+    }) )
   }
 
   render() {
