@@ -11,6 +11,7 @@ class DashboardContainer extends Component {
       users: [],
     }
   }
+
   componentDidMount() {
     api.getUsers()
     .then (allUsers => this.setState({
@@ -22,11 +23,14 @@ class DashboardContainer extends Component {
     console.log('0. state from DashboardContainer: ', this.state)
     return(
       <div key={this.props.id} className='center'>
+        
         <h1>
           DashboardContainer is here!!!
         </h1>
 
-        <ShowUsers />
+        <ShowUsers
+          users={this.state.users}
+        />
 
       </div>
     )
