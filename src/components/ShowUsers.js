@@ -29,8 +29,11 @@ const ShowUsers = (props) => {
             <h2>
               {`user id: ${user.id}`}
               <br></br>
-              {`user bio: ${user.bio}`}
+              {`"${user.bio}"`}
             </h2>
+            <div>
+              {`Buildings: ${user.buildings.length}`}
+            </div>
             {user.buildings.length > 0 ?
               user.buildings.map( (building) => {
                 return (
@@ -42,9 +45,8 @@ const ShowUsers = (props) => {
                   </div>
                 )
               }
-
               )
-              : "no bulding info"}
+              : " "}
 
           </div>
         )
