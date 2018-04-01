@@ -10,6 +10,7 @@ const ShowUsers = (props) => {
   const allUsers = props.users //an array
   console.log('allUsers.length: ', allUsers.length)
   console.log('allUsers[0]: ', allUsers[0])
+  console.log('allUsers[2]: ', allUsers[2])
 
   return(
 
@@ -25,9 +26,26 @@ const ShowUsers = (props) => {
             <h1>
               {`${user.name}`}
             </h1>
-            {`user id: ${user.id}`}
-            <br></br>
-            {`user bio: ${user.bio}`}
+            <h2>
+              {`user id: ${user.id}`}
+              <br></br>
+              {`user bio: ${user.bio}`}
+            </h2>
+            {user.buildings.length > 0 ?
+              user.buildings.map( (building) => {
+                return (
+                  <div key={building.id} className='each-building'>
+                    <h3>
+                      {building.name}
+                    </h3>
+                    {building.address}
+                  </div>
+                )
+              }
+
+              )
+              : "no bulding info"}
+
           </div>
         )
       }
