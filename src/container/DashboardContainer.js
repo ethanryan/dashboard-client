@@ -40,6 +40,7 @@ class DashboardContainer extends Component {
 
         <ShowUsers
           users={this.state.users}
+          properties={this.state.properties}
         />
 
       </div>
