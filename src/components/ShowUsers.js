@@ -13,7 +13,7 @@ const ShowUsers = (props) => {
 
   return(
 
-    <div key={props.id} className='center'>
+    <div key={props.id} className='center show-users'>
       ShowUsers will be here!!!
 
       <br></br>
