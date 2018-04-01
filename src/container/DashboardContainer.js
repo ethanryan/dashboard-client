@@ -9,6 +9,9 @@ class DashboardContainer extends Component {
     super()
     this.state = {
       users: [],
+      properties: {
+        trump: [],
+      },
     }
   }
 
@@ -17,13 +20,20 @@ class DashboardContainer extends Component {
     .then (allUsers => this.setState({
       users: allUsers
     }) )
+
+    api.getProperties()
+    .then (trumpProperies => this.setState({
+      properties: {
+        trump: trumpProperies
+      }
+    }) )
   }
 
   render() {
     console.log('0. state from DashboardContainer: ', this.state)
     return(
       <div key={this.props.id} className='center'>
-        
+
         <h1>
           DashboardContainer is here!!!
         </h1>
