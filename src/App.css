@@ -36,3 +36,8 @@
 .show-users {
   border: 3px solid red;
 }
+
+.each-user {
+  border: 1px solid blue;
+  margin: 15px;
+}

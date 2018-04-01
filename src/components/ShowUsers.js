@@ -20,7 +20,22 @@ const ShowUsers = (props) => {
       <br></br>
 
       {allUsers.length > 0 ? allUsers[0].name : "allUsers here"}
-      {allUsers.length > 0 ? allUsers.map(user => `user.name is: ${user.name}----`) : "allUsers here"}
+
+      <br></br>
+      <br></br>
+
+      {allUsers.length > 0 ? allUsers.map( (user) => {
+        return (
+          <div key={user.id} className='each-user'>
+            <h1>
+              {`${user.name}`}
+            </h1>
+            {`${user.bio}`}
+          </div>
+        )
+      }
+      )
+       : "allUsers here"}
 
     </div>
   )
