@@ -9,9 +9,10 @@ class DashboardContainer extends Component {
     super()
     this.state = {
       users: [],
-      properties: {
-        trump: [],
-      },
+      properties: [],
+      // properties: {
+      //   Trump: [],
+      // },
     }
   }
 
@@ -23,9 +24,10 @@ class DashboardContainer extends Component {
 
     api.getProperties()
     .then (trumpProperies => this.setState({
-      properties: {
-        trump: trumpProperies
-      }
+      properties: trumpProperies, //this needs to add trumpProperies to properties array, not override it....
+      // properties: {
+      //   Trump: trumpProperies
+      // }
     }) )
   }
 
