@@ -45,16 +45,22 @@
 }
 
 .each-property {
-  border: 1px solid orange;
-  margin: 15px;
+  border: 5px solid orange;
+  margin: 25px;
 }
 
 .each-window {
   border: 1px solid green;
-  margin: 25px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .each-ad {
   border: 1px solid purple;
-  margin: 25px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
