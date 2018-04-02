@@ -49,6 +49,11 @@
   margin: 15px;
 }
 
+.each-window {
+  border: 1px solid green;
+  margin: 25px;
+}
+
 .each-ad {
   border: 1px solid purple;
   margin: 25px;
