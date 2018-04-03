@@ -53,22 +53,26 @@
 }
 
 .each-property {
-  border: 5px solid orange;
+  /* border: 5px solid orange; */
   margin: 25px;
+  padding: 10px;
 }
 
 .each-window {
-  border: 1px solid green;
-  margin-left: 150px;
-  margin-right: 150px;
-  padding-left: 25px;
-  padding-right: 25px;
+  /* border: 1px solid green; */
+  margin-left: 50px;
+  margin-right: 50px;
+  /* padding-left: 25px;
+  padding-right: 25px; */
+  padding: 25px;
 }
 
 .each-ad {
-  border: 1px solid purple;
-  margin-left: 150px;
-  margin-right: 150px;
-  padding-left: 25px;
+  /* border: 1px solid purple; */
+  margin-left: 50px;
+  margin-right: 50px;
+  /* padding-left: 25px;
   padding-right: 25px;
+  padding-bottom: 25px; */
+  padding: 25px;
 }

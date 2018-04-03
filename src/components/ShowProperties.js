@@ -10,8 +10,8 @@ const ShowProperties = (props) => {
 
   return(
     <div>
-      {"ShowProperties here!!!"}
-      <br></br>
+      {/* {"ShowProperties here!!!"} */}
+      {/* <br></br> */}
         {props.properties.length > 0
           ?
           props.properties.map( (property) => {
@@ -19,17 +19,24 @@ const ShowProperties = (props) => {
               console.log('property is: ', property)
               return (
                 <div key={property.id} className='each-property'>
+                  <Card fluid color='orange'>
+                    <Card.Header>
                   <h3>
                     {property.name}
                   </h3>
+                </Card.Header>
+                <Card.Description>
                   {property.address}
+                </Card.Description>
+
+                <br></br>
 
                   <div>
-                    Windows: {property.windows.length}
-                    <div>
+                      Windows: {property.windows.length}
                       {property.windows.map( (eachWindow) => {
                         return (
                           <div key={eachWindow.id} className='each-window'>
+                            <Card fluid color='green'>
                             <div>
                             <h4>
                               Window info:
@@ -38,31 +45,34 @@ const ShowProperties = (props) => {
                             <div>Hourly mobile devices: {eachWindow.hourly_mobile_devices}</div>
                             <div>Hourly vehicle traffic: {eachWindow.hourly_vehicle_traffic}</div>
                           </div>
+                        </Card>
                         </div>
                         )
                       })}
                  </div>
-                 </div>
 
                   <div>
                     Ads: {property.ads.length}
-                    <div>
                       {property.ads.map( (ad) => {
                         return (
                           <div key={ad.id} className='each-ad'>
+                            <Card fluid color='purple'>
                             <h4>
                               Ad campaign: {ad.name}
                             </h4>
                             Ad impressions: {ad.hourly_impressions}
+                          </Card>
                           </div>
                         )
                       })}
                     </div>
-                  </div>
+                  </Card>
                 </div>
               )
             }
-            return "*****"
+            // return "No property data."
+            // return "***"
+            return " "
           })
           : "no thanks......"}
     </div>
