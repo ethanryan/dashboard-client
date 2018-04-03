@@ -1,10 +1,12 @@
 import React from 'react'
 
+import { Card } from 'semantic-ui-react'
+
 const ShowProperties = (props) => {
 
   console.log('ShowProperties props: ', props)
   console.log('props.properties[0] is: ', props.properties[0])
-  console.log('props.userBuildings[0] is: ', props.userBuildings[0])
+  console.log('props.userBuildingNames[0] is: ', props.userBuildingNames[0])
 
   return(
     <div>
@@ -13,7 +15,7 @@ const ShowProperties = (props) => {
         {props.properties.length > 0
           ?
           props.properties.map( (property) => {
-            if ( props.userBuildings.includes(property.name) ) {
+            if ( props.userBuildingNames.includes(property.name) ) {
               console.log('property is: ', property)
               return (
                 <div key={property.id} className='each-property'>

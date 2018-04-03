@@ -57,7 +57,7 @@ const ShowUsers = (props) => {
                   {user.buildings.length > 0 ?
                     <ShowProperties
                       properties={allProperties}
-                      userBuildings={user.buildings.map(building => building.name)}
+                      userBuildingNames={user.buildings.map(building => building.name)}
                     />
                     :
                     "no properties"}
