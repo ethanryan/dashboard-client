@@ -12,71 +12,69 @@ const ShowProperties = (props) => {
     <div>
       {/* {"ShowProperties here!!!"} */}
       {/* <br></br> */}
-        {props.properties.length > 0
-          ?
-          props.properties.map( (property) => {
-            if ( props.userBuildingNames.includes(property.name) ) {
-              console.log('property is: ', property)
-              return (
-                <div key={property.id} className='each-property'>
-                  <Card fluid color='orange'>
-                    <Card.Header>
-                  <h3>
-                    {property.name}
-                  </h3>
-                </Card.Header>
-                <Card.Description>
-                  {property.address}
-                </Card.Description>
+      {props.properties.length > 0
+        ?
+        props.properties.map( (property) => {
+          if ( props.userBuildingNames.includes(property.name) ) {
+            console.log('property is: ', property)
+            return (
+              <div key={property.id} className='each-property'>
+                <Card fluid color='orange'>
+                  <Card.Header>
+                    <h3>
+                      {property.name}
+                    </h3>
+                  </Card.Header>
+                  <Card.Description>
+                    {property.address}
+                  </Card.Description>
 
-                <br></br>
+                  <br></br>
 
                   <div>
-                      Windows: {property.windows.length}
-                      {property.windows.map( (eachWindow) => {
-                        return (
-                          <div key={eachWindow.id} className='each-window'>
-                            <Card fluid color='green'>
-                            <div>
+                    Windows: {property.windows.length}
+                    {property.windows.map( (eachWindow) => {
+                      return (
+                        <div key={eachWindow.id} className='each-window'>
+                          <Card fluid color='green'>
                             <h4>
                               Window info:
                             </h4>
                             <div>Hourly foot traffic: {eachWindow.hourly_foot_traffic}</div>
                             <div>Hourly mobile devices: {eachWindow.hourly_mobile_devices}</div>
                             <div>Hourly vehicle traffic: {eachWindow.hourly_vehicle_traffic}</div>
-                          </div>
-                        </Card>
+                          </Card>
                         </div>
-                        )
-                      })}
-                 </div>
+                      )
+                    })}
+                  </div>
 
                   <div>
                     Ads: {property.ads.length}
-                      {property.ads.map( (ad) => {
-                        return (
-                          <div key={ad.id} className='each-ad'>
-                            <Card fluid color='purple'>
+                    {property.ads.map( (ad) => {
+                      return (
+                        <div key={ad.id} className='each-ad'>
+                          <Card fluid color='purple'>
                             <h4>
                               Ad campaign: {ad.name}
                             </h4>
                             Ad impressions: {ad.hourly_impressions}
                           </Card>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  </Card>
-                </div>
-              )
-            }
-            // return "No property data."
-            // return "***"
-            return " "
-          })
-          : "no thanks......"}
-    </div>
-  )
-}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </Card>
+              </div>
+            )
+          }
+          // return "No property data."
+          return " *** "
+          // return " "
+        })
+        : "No properties!"}
+      </div>
+    )
+  }
 
-export default ShowProperties
+  export default ShowProperties
