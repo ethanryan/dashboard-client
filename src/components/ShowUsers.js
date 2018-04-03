@@ -2,6 +2,8 @@ import React from 'react'
 
 import ShowProperties from './ShowProperties'
 
+import { Card, Loader, Segment } from 'semantic-ui-react'
+
 const ShowUsers = (props) => {
 
   console.log('hello from ShowUsers')
