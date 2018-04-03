@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: azure;
 }
 
 .App-logo {
@@ -34,14 +35,18 @@
 
 
 .show-users {
-  border: 3px solid red;
-  margin-left: 100px;
-  margin-right: 100px;
+  /* border: 3px solid red; */
+  /* background-color: gainsboro; */
+  /* gainsboro is lighter than lightgray */
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .each-user {
-  border: 1px solid blue;
-  margin: 15px;
+  /* border: 1px solid blue; */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 
 .each-property {
