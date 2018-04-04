@@ -47,8 +47,8 @@ const ShowProperties = (props) => {
                         </div>
                       )
                     })
-                  :
-                "property.windows here!!!"}
+                    :
+                    "property.windows here!!!"}
                   </div>
 
                   <div>
@@ -65,8 +65,8 @@ const ShowProperties = (props) => {
                         </div>
                       )
                     })
-                  :
-                "property.ads here!!!"}
+                    :
+                    "property.ads here!!!"}
                   </div>
                 </Card>
               </div>
