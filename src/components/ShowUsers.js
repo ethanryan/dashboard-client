@@ -29,7 +29,7 @@ const ShowUsers = (props) => {
             <div key={user.id} className='each-user'>
               <Card fluid color='blue'>
 
-                <Card.Content>
+                <Card.Content className='user-card-header'>
 
                   <Card.Header>
                     <h1>
@@ -48,7 +48,7 @@ const ShowUsers = (props) => {
                 </Card.Content>
 
 
-                <Card.Content>
+                <Card.Content className='user-card-content'>
 
                   <div>
                     {`Buildings: ${user.buildings.length}`}

@@ -52,6 +52,14 @@
   margin-bottom: 25px;
 }
 
+.user-card-header {
+  background-color: lightgreen!important;
+}
+
+.user-card-content {
+  background-color: lightgray!important;
+}
+
 .each-property {
   /* border: 5px solid orange; */
   margin: 25px;
