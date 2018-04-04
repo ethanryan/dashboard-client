@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card } from 'semantic-ui-react'
+import { Card, Statistic } from 'semantic-ui-react'
 
 const ShowProperties = (props) => {
 
@@ -12,13 +12,16 @@ const ShowProperties = (props) => {
     <div>
       {/* {"ShowProperties here!!!"} */}
       {/* <br></br> */}
+
       {props.properties.length > 0
         ?
-        props.properties.map( (property) => {
+        props.properties.map( (property, index) => {
           if ( props.userBuildingNames.includes(property.name) ) {
             console.log('property is: ', property)
+            // console.log('index is: ', index)
             return (
-              <div key={property.id} className='each-property'>
+              // <div key={property.id} className='each-property'>
+              <div key={index} className='each-property'>
                 <Card fluid color='orange'>
                   <Card.Header>
                     <h3>
@@ -60,7 +63,12 @@ const ShowProperties = (props) => {
                             <h4>
                               Ad campaign: {ad.name}
                             </h4>
-                            Ad impressions: {ad.hourly_impressions}
+                            {/* Ad impressions: {ad.hourly_impressions} */}
+                            <Statistic>
+                              <Statistic.Value>{ad.hourly_impressions.toLocaleString()}</Statistic.Value>
+                              <Statistic.Label>Ad impressions</Statistic.Label>
+                            </Statistic>
+
                           </Card>
                         </div>
                       )
@@ -73,8 +81,8 @@ const ShowProperties = (props) => {
             )
           }
           // return "No property data."
-          return " *** "
-          // return " "
+          // return " *** "
+          return " "
         })
         : "No properties!"}
       </div>
