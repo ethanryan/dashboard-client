@@ -72,7 +72,8 @@
   margin-right: 50px;
   /* padding-left: 25px;
   padding-right: 25px; */
-  padding: 25px;
+  padding-top: 15px;
+  padding-bottom: 25px;
 }
 
 .each-ad {
@@ -82,5 +83,10 @@
   /* padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 25px; */
-  padding: 25px;
+  padding-bottom: 25px;
+}
+
+.no-padding {
+  padding: 0px;
+  margin: 0px;
 }

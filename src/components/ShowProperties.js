@@ -32,10 +32,10 @@ const ShowProperties = (props) => {
                     {property.address}
                   </Card.Description>
 
-                  <br></br>
+                  {/* <br></br> */}
 
                   <div>
-                    Windows: {property.windows ? property.windows.length : "property.windows.length here"}
+                    {/* Windows: {property.windows ? property.windows.length : "property.windows.length here"} */}
                     {property.windows ? property.windows.map( (eachWindow) => {
                       return (
                         <div key={eachWindow.id} className='each-window'>
@@ -55,12 +55,12 @@ const ShowProperties = (props) => {
                   </div>
 
                   <div>
-                    Ads: {property.ads ? property.ads.length : "property.ads.length here"}
+                    {/* Ads: {property.ads ? property.ads.length : "property.ads.length here"} */}
                     {property.ads ? property.ads.map( (ad) => {
                       return (
                         <div key={ad.id} className='each-ad'>
                           <Card fluid color='purple'>
-                            <h4>
+                            <h4 className='no-padding'>
                               Ad campaign: {ad.name}
                             </h4>
                             {/* Ad impressions: {ad.hourly_impressions} */}
