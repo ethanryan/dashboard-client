@@ -10,9 +10,6 @@ class DashboardContainer extends Component {
     this.state = {
       users: [],
       properties: [],
-      // properties: {
-      //   Trump: [],
-      // },
     }
   }
 
@@ -21,13 +18,15 @@ class DashboardContainer extends Component {
     .then (allUsers => this.setState({
       users: allUsers
     }) )
+    
+    api.getPropertiesTrump()
+    .then (trumpProperties => this.setState({
+      properties: [...this.state.properties, ...trumpProperties], //using spread operator to add trumpProperies to properties array, not override it....
+    }) )
 
-    api.getProperties()
-    .then (trumpProperies => this.setState({
-      properties: trumpProperies, //this needs to add trumpProperies to properties array, not override it....
-      // properties: {
-      //   Trump: trumpProperies
-      // }
+    api.getPropertiesJayZ()
+    .then (jayzProperties => this.setState({
+      properties: [...this.state.properties, ...jayzProperties],
     }) )
   }
 

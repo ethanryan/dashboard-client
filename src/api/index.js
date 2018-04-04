@@ -2,6 +2,7 @@
 const baseUrl = 'http://localhost:3000'
 
 export function getUsers() {
+  console.log('calling getUsers from baseUrl in api/index...')
   return fetch(`${baseUrl}/users`, {
     headers: {
       'Accept': 'application/json',
@@ -23,9 +24,33 @@ export function getUsers() {
 
 const trumpUrl = 'http://localhost:3002'
 
-export function getProperties() {
-  console.log('calling getProperties in api/index!!!')
+export function getPropertiesTrump() {
+  console.log('calling getProperties from trumpUrl in api/index...')
   return fetch(`${trumpUrl}/properties`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('jwt')
+    },
+    mode: 'cors',
+    method: 'GET',
+  })
+  .then (response => response.json() )
+}
+
+
+
+//jayz-db
+
+// note: to run jayz-db at above server address,
+// cd into jayz-db and run:
+// rails s -p 3003
+
+const jayzUrl = 'http://localhost:3003'
+
+export function getPropertiesJayZ() {
+  console.log('calling getProperties from jayzUrl in api/index...')
+  return fetch(`${jayzUrl}/properties`, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
