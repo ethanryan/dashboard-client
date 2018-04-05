@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Card, Statistic } from 'semantic-ui-react'
 
+import BusinessChart from '../assets/BusinessChart.svg'
+
 const ShowAds = (props) => {
 
   // console.log('ShowAds props: ', props)
@@ -38,6 +40,12 @@ const ShowAds = (props) => {
                     })
                     :
                     "property.ads here!!!"}
+                  </div>
+
+                  <br></br>
+
+                  <div className="pie-chart-img">
+                    <img src={BusinessChart} alt="business chart"/>
                   </div>
 
                   <Card.Header className='show-properties-card-header'>
