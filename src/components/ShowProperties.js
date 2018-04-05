@@ -8,6 +8,7 @@ const ShowProperties = (props) => {
 
   return(
     <div>
+
       {/* {"ShowProperties here!!!"} */}
       {/* <br></br> */}
 
@@ -20,6 +21,7 @@ const ShowProperties = (props) => {
             return (
               // <div key={property.id} className='each-property'>
               <div key={index} className='each-property'>
+
                 <Card fluid color='orange'>
                   <Card.Header className='show-properties-card-header'>
                     <h2>
