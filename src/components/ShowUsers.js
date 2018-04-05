@@ -1,6 +1,7 @@
 import React from 'react'
 
 import ShowProperties from './ShowProperties'
+import ShowAds from './ShowAds'
 
 import { Card, Icon } from 'semantic-ui-react'
 
@@ -53,16 +54,24 @@ const ShowUsers = (props) => {
                 <Card.Content className='user-card-content'>
 
                   <div>
-                    {user.buildings.length > 0 ? `Buildings: ${user.buildings.length}` : 'Ad Campaigns Below'}
+                    {user.buildings.length > 0 ? `Buildings: ${user.buildings.length}` : "Ads: "}
                   </div>
 
-                  {user.buildings.length > 0 ?
+                  {user.buildings.length > 0
+                    ?
                     <ShowProperties
                       properties={allProperties}
                       userBuildingNames={user.buildings.map(building => building.name)}
                     />
                     :
-                    "no properties"}
+                    <ShowAds
+                      userName={user.name}
+                      adCampaign={user.name === "Walt Disney Company" ? "Spider-Man vs The Incredible Hulk" : "Nike"}
+                      properties={allProperties}
+                      adNames={props.properties.map(property => property.ads)} //an array of ad objects
+                      userBuildingNames={user.buildings.map(building => building.name)}
+                    />
+                  }
 
                   </Card.Content>
                 </Card>
