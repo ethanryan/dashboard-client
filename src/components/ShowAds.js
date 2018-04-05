@@ -4,17 +4,11 @@ import { Card, Statistic } from 'semantic-ui-react'
 
 const ShowAds = (props) => {
 
-  console.log('ShowAds props: ', props)
-  console.log('props.properties[0] is: ', props.properties[0])
-  console.log('props.userBuildingNames[0] is: ', props.userBuildingNames[0])
+  // console.log('ShowAds props: ', props)
 
   return(
     <div>
-      {/* {"ShowAds here!!!"} */}
-      {/* <br></br> */}
-
-      {props.userBuildingNames < 1 ? "IM AN ADVERTSER!!!" : " "}
-      <br></br>
+      {/* {props.userBuildingNames < 1 ? "Monthly Ad Campaign Results" : " "} */}
 
       {props.userBuildingNames < 1
         ?
@@ -22,30 +16,25 @@ const ShowAds = (props) => {
           let eachAd = property.ads.map(ad => ad.name) //array of ad names...
           console.log('eachAd is: ', eachAd)
           if ( props.adCampaign.includes(eachAd) ) {
-            console.log('******* ^^^^ property in ShowAds is: ', property)
+            // console.log('******* ^^^^ property in ShowAds is: ', property)
             return(
-              <div key={index} className='each-property'>
-                <Card fluid color='orange'>
+              <div key={index} className='each-advertisment'>
+                <Card fluid color='purple'>
 
                   <div>
-                    {/* Ads: {property.ads ? property.ads.length : "property.ads.length here"} */}
                     {property.ads ? property.ads.map( (ad, index) => {
                       return (
-                        <div key={index} className='each-ad'>
-                          {/* <Card fluid color='purple'> */}
-                          {/* <h4 className='no-padding'> */}
+                        <div key={index} className='each-ad-in-advertisment'>
                           <h4>
                             Ad campaign:
                           </h4>
                           <div className='big-ad-name-text'>
                             {ad.name}
                           </div>
-                          {/* Ad impressions: {ad.hourly_impressions} */}
                           <Statistic>
                             <Statistic.Value>{ad.hourly_impressions.toLocaleString()}</Statistic.Value>
                             <Statistic.Label>Ad impressions</Statistic.Label>
                           </Statistic>
-                          {/* </Card> */}
                         </div>
                       )
                     })
@@ -63,19 +52,15 @@ const ShowAds = (props) => {
                   </Card.Description>
 
                   <div>
-                    {/* Windows: {property.windows ? property.windows.length : "property.windows.length here"} */}
                     {property.windows ? property.windows.map( (eachWindow, index) => {
                       return (
-                        // <div key={eachWindow.id} className='each-window'>
                         <div key={index} className='each-window'>
-                          {/* <Card fluid color='green'> */}
                           <h4>
                             Window info:
                           </h4>
                           <div>Hourly foot traffic: {eachWindow.hourly_foot_traffic.toLocaleString()}</div>
                           <div>Hourly mobile devices: {eachWindow.hourly_mobile_devices.toLocaleString()}</div>
                           <div>Hourly vehicle traffic: {eachWindow.hourly_vehicle_traffic.toLocaleString()}</div>
-                          {/* </Card> */}
                         </div>
                       )
                     })
@@ -91,13 +76,6 @@ const ShowAds = (props) => {
         :
         "No ads!"}
 
-        <br></br>
-
-        {props.userBuildingNames < 1 && props.userName === "Walt Disney Company"
-        ?
-        "IM WALK DISNEYYY!!!"
-        :
-        " "}
       </div>
     )
   }

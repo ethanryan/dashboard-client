@@ -54,7 +54,7 @@ const ShowUsers = (props) => {
                 <Card.Content className='user-card-content'>
 
                   <div>
-                    {user.buildings.length > 0 ? `Buildings: ${user.buildings.length}` : "Ads: "}
+                    {user.buildings.length > 0 ? `Buildings: ${user.buildings.length}` : "Monthly Ad Campaign Results"}
                   </div>
 
                   {user.buildings.length > 0
@@ -65,10 +65,9 @@ const ShowUsers = (props) => {
                     />
                     :
                     <ShowAds
-                      userName={user.name}
+                      // userName={user.name}
                       adCampaign={user.name === "Walt Disney Company" ? "Spider-Man vs The Incredible Hulk" : "Nike"}
                       properties={allProperties}
-                      adNames={props.properties.map(property => property.ads)} //an array of ad objects
                       userBuildingNames={user.buildings.map(building => building.name)}
                     />
                   }

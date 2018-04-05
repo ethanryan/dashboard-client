@@ -66,6 +66,13 @@
   padding: 10px;
 }
 
+.each-advertisment {
+  /* border: 5px solid orange; */
+  background-color: purple;
+  margin: 25px;
+  padding: 10px;
+}
+
 .each-window {
   /* border: 1px solid green; */
   margin-left: 50px;
@@ -80,10 +87,14 @@
   /* border: 1px solid purple; */
   margin-left: 50px;
   margin-right: 50px;
-  /* padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25px; */
   padding-bottom: 25px;
+}
+
+.each-ad-in-advertisment {
+  /* border: 1px solid purple; */
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-top: 15px;
 }
 
 .show-properties-card-header {
@@ -97,6 +108,7 @@
 
 .big-ad-name-text {
   font-size: 24px;
+  font-style: italic;
   /* text-shadow: 2px 3px 3px rgba(0,0,0,0.3); */
-  text-shadow: 2px 2px 0px rgba(0,128,0,0.3);
+  /* text-shadow: 2px 2px 0px rgba(0,128,0,0.3); */
 }
