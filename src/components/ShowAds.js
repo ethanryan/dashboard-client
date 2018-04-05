@@ -14,9 +14,7 @@ const ShowAds = (props) => {
         ?
         props.properties.map( (property, index) => {
           let eachAd = property.ads.map(ad => ad.name) //array of ad names...
-          console.log('eachAd is: ', eachAd)
           if ( props.adCampaign.includes(eachAd) ) {
-            // console.log('******* ^^^^ property in ShowAds is: ', property)
             return(
               <div key={index} className='each-advertisment'>
                 <Card fluid color='purple'>

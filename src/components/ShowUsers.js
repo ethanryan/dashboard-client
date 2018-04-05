@@ -66,9 +66,8 @@ const ShowUsers = (props) => {
                   />
                   :
                   <ShowAds
-                    // userName={user.name}
-                    adCampaign={user.name === "Walt Disney Company" ? "Spider-Man vs The Incredible Hulk" : "Nike"}
                     properties={allProperties}
+                    adCampaign={user.ad_campaign}
                   />
                 }
 
