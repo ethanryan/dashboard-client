@@ -72,6 +72,11 @@
   background-color: rgb(245, 248, 250)!important;
 }
 
+.pie-chart-img {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
 .each-property {
   /* border: 5px solid orange; */
   margin: 25px;

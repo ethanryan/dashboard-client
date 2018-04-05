@@ -2,6 +2,10 @@ import React from 'react'
 
 import { Card, Statistic } from 'semantic-ui-react'
 
+import PieChart from '../assets/PieChart.svg'
+// import nerdy from '../components/assets/nerdy.gif'
+
+
 const ShowProperties = (props) => {
 
   // console.log('ShowProperties props: ', props)
@@ -33,6 +37,9 @@ const ShowProperties = (props) => {
                   </Card.Description>
 
                   {/* <br></br> */}
+                  <div className="pie-chart-img">
+                    <img src={PieChart} alt="pie chart"/>
+                  </div>
 
                   <div>
                     {/* Windows: {property.windows ? property.windows.length : "property.windows.length here"} */}
