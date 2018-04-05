@@ -21,8 +21,9 @@ const ShowUsers = (props) => {
 
   return(
 
-    <div key={props.id} className='center show-users'>
-      <Card fluid>
+    // <div key={props.id} className='center show-users'>
+    <div key={props.id} className='center'>
+      
         {/* ShowUsers will be here!!! */}
 
         {allUsers.length > 0 ? allUsers.map( (user) => {
@@ -80,7 +81,6 @@ const ShowUsers = (props) => {
         )
         : "allUsers here"}
 
-      </Card>
     </div>
   )
 }

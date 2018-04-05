@@ -32,14 +32,17 @@
 
 
 
-
+.dashboard-tabs {
+  margin-left: 15%;
+  margin-right: 15%;
+}
 
 .show-users {
   /* border: 3px solid red; */
   /* background-color: gainsboro; */
   /* gainsboro is lighter than lightgray */
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 40px;
   padding-bottom: 40px;
 }
