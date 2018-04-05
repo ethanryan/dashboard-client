@@ -10,7 +10,7 @@ const ShowAds = (props) => {
     <div>
       {/* {props.userBuildingNames < 1 ? "Monthly Ad Campaign Results" : " "} */}
 
-      {props.userBuildingNames < 1
+      {props.properties
         ?
         props.properties.map( (property, index) => {
           let eachAd = property.ads.map(ad => ad.name) //array of ad names...

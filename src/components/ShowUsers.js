@@ -3,7 +3,7 @@ import React from 'react'
 import ShowProperties from './ShowProperties'
 import ShowAds from './ShowAds'
 
-import { Card, Icon } from 'semantic-ui-react'
+import { Card, Icon, Dimmer, Loader } from 'semantic-ui-react'
 
 const ShowUsers = (props) => {
 
@@ -23,66 +23,73 @@ const ShowUsers = (props) => {
 
     // <div key={props.id} className='center show-users'>
     <div key={props.id} className='center'>
-      
-        {/* ShowUsers will be here!!! */}
 
-        {allUsers.length > 0 ? allUsers.map( (user) => {
-          return (
-            <div key={user.id} className='each-user'>
-              <Card fluid color='blue'>
+      {/* ShowUsers will be here!!! */}
 
-                <Card.Content className='user-card-header'>
+      {allUsers.length > 0 ? allUsers.map( (user) => {
+        return (
+          <div key={user.id} className='each-user'>
+            <Card fluid color='blue'>
 
-                  <Card.Header>
-                    <h1>
-                      {user.name}
-                    </h1>
-                    {/* {`user id: ${user.id}`} */}
+              <Card.Content className='user-card-header'>
 
-                    <div>
-                      {user.buildings.length > 0 ? <Icon name='building' /> : <Icon name='photo' />}
-                    </div>
-
-                  </Card.Header>
-
-
-                  <Card.Description>
-                    {`"${user.bio}"`}
-                  </Card.Description>
-                </Card.Content>
-
-
-                <Card.Content className='user-card-content'>
+                <Card.Header>
+                  <h1>
+                    {user.name}
+                  </h1>
+                  {/* {`user id: ${user.id}`} */}
 
                   <div>
-                    {user.buildings.length > 0 ? `Buildings: ${user.buildings.length}` : "Monthly Ad Campaign Results"}
+                    {user.buildings.length > 0 ? <Icon name='building' /> : <Icon name='photo' />}
                   </div>
 
-                  {user.buildings.length > 0
-                    ?
-                    <ShowProperties
-                      properties={allProperties}
-                      userBuildingNames={user.buildings.map(building => building.name)}
-                    />
-                    :
-                    <ShowAds
-                      // userName={user.name}
-                      adCampaign={user.name === "Walt Disney Company" ? "Spider-Man vs The Incredible Hulk" : "Nike"}
-                      properties={allProperties}
-                      userBuildingNames={user.buildings.map(building => building.name)}
-                    />
-                  }
+                </Card.Header>
 
-                  </Card.Content>
-                </Card>
-              </div>
-            )
-          }
+
+                <Card.Description>
+                  {`"${user.bio}"`}
+                </Card.Description>
+              </Card.Content>
+
+
+              <Card.Content className='user-card-content'>
+
+                <div>
+                  {user.buildings.length > 0 ? `Buildings: ${user.buildings.length}` : "Monthly Ad Campaign Results"}
+                </div>
+
+                {user.buildings.length > 0
+                  ?
+                  <ShowProperties
+                    properties={allProperties}
+                    userBuildingNames={user.buildings.map(building => building.name)}
+                  />
+                  :
+                  <ShowAds
+                    // userName={user.name}
+                    adCampaign={user.name === "Walt Disney Company" ? "Spider-Man vs The Incredible Hulk" : "Nike"}
+                    properties={allProperties}
+                  />
+                }
+
+              </Card.Content>
+            </Card>
+          </div>
         )
-        : "allUsers here"}
-
+      }
+    )
+    :
+    <div>
+      <br></br>
+      <br></br>
+      <Dimmer active inverted>
+        <Loader inverted>Loading Users</Loader>
+      </Dimmer>
     </div>
-  )
+  }
+
+</div>
+)
 }
 
 export default ShowUsers
