@@ -2,7 +2,7 @@ import React from 'react'
 
 import ShowProperties from './ShowProperties'
 
-import { Card } from 'semantic-ui-react'
+import { Card, Icon } from 'semantic-ui-react'
 
 const ShowUsers = (props) => {
 
@@ -35,12 +35,14 @@ const ShowUsers = (props) => {
                     <h1>
                       {user.name}
                     </h1>
-                    {`user id: ${user.id}`}
+                    {/* {`user id: ${user.id}`} */}
+
+                    <div>
+                      {user.buildings.length > 0 ? <Icon name='building' /> : <Icon name='photo' />}
+                    </div>
+
                   </Card.Header>
 
-                  {/* <div>
-                    {user.name === "Trump" ? "THIS IS TRUMP!!!" : "nope"}
-                  </div> */}
 
                   <Card.Description>
                     {`"${user.bio}"`}
@@ -51,7 +53,7 @@ const ShowUsers = (props) => {
                 <Card.Content className='user-card-content'>
 
                   <div>
-                    {`Buildings: ${user.buildings.length}`}
+                    {user.buildings.length > 0 ? `Buildings: ${user.buildings.length}` : 'Ad Campaigns Below'}
                   </div>
 
                   {user.buildings.length > 0 ?
