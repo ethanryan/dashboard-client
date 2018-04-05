@@ -56,16 +56,20 @@
   /* border: 1px solid blue; */
   margin-left: 50px;
   margin-right: 50px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 75px;
+  margin-bottom: 35px;
 }
 
 .user-card-header {
-  background-color: lightgreen!important;
+  /* background-color: lightgreen!important; */
+  /* background-color: gainsboro!important; */
+  /* background-color: rgb(232, 245, 253)!important; */
+  /* background-color: orange!important; */
+  border-bottom: 3px solid orange!important;
 }
 
 .user-card-content {
-  background-color: lightgray!important;
+  background-color: rgb(245, 248, 250)!important;
 }
 
 .each-property {
