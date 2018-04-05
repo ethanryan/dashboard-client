@@ -67,9 +67,9 @@ class DashboardContainer extends Component {
 return(
   <div key={this.props.id} className='center dashboard-tabs'>
 
-    <h1>
+    {/* <h1>
       DashboardContainer is here!!!
-    </h1>
+    </h1> */}
 
     <Tab panes={panes} />
 

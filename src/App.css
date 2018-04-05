@@ -30,11 +30,16 @@
 
 
 
-
+.ui.tabular.menu .item {
+  padding-left: 10%;
+  padding-right: 10%;
+}
 
 .dashboard-tabs {
+  padding-top: 25px;
   margin-left: 15%;
   margin-right: 15%;
+  padding-bottom: 25px;
 }
 
 .show-users {
