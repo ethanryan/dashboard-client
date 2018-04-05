@@ -86,7 +86,17 @@
   padding-bottom: 25px;
 }
 
+.show-properties-card-header {
+  padding-top: 25px;
+}
+
 .no-padding {
   padding: 0px;
   margin: 0px;
+}
+
+.big-ad-name-text {
+  font-size: 24px;
+  /* text-shadow: 2px 3px 3px rgba(0,0,0,0.3); */
+  text-shadow: 2px 2px 0px rgba(0,128,0,0.3);
 }

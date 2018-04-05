@@ -23,10 +23,10 @@ const ShowProperties = (props) => {
               // <div key={property.id} className='each-property'>
               <div key={index} className='each-property'>
                 <Card fluid color='orange'>
-                  <Card.Header>
-                    <h3>
+                  <Card.Header className='show-properties-card-header'>
+                    <h2>
                       {property.name}
-                    </h3>
+                    </h2>
                   </Card.Header>
                   <Card.Description>
                     {property.address}
@@ -38,15 +38,16 @@ const ShowProperties = (props) => {
                     {/* Windows: {property.windows ? property.windows.length : "property.windows.length here"} */}
                     {property.windows ? property.windows.map( (eachWindow) => {
                       return (
+                        // <div key={eachWindow.id} className='each-window'>
                         <div key={eachWindow.id} className='each-window'>
-                          <Card fluid color='green'>
+                          {/* <Card fluid color='green'> */}
                             <h4>
                               Window info:
                             </h4>
-                            <div>Hourly foot traffic: {eachWindow.hourly_foot_traffic}</div>
-                            <div>Hourly mobile devices: {eachWindow.hourly_mobile_devices}</div>
-                            <div>Hourly vehicle traffic: {eachWindow.hourly_vehicle_traffic}</div>
-                          </Card>
+                            <div>Hourly foot traffic: {eachWindow.hourly_foot_traffic.toLocaleString()}</div>
+                            <div>Hourly mobile devices: {eachWindow.hourly_mobile_devices.toLocaleString()}</div>
+                            <div>Hourly vehicle traffic: {eachWindow.hourly_vehicle_traffic.toLocaleString()}</div>
+                          {/* </Card> */}
                         </div>
                       )
                     })
@@ -59,17 +60,20 @@ const ShowProperties = (props) => {
                     {property.ads ? property.ads.map( (ad) => {
                       return (
                         <div key={ad.id} className='each-ad'>
-                          <Card fluid color='purple'>
-                            <h4 className='no-padding'>
-                              Ad campaign: {ad.name}
+                          {/* <Card fluid color='purple'> */}
+                            {/* <h4 className='no-padding'> */}
+                            <h4>
+                              Ad campaign:
                             </h4>
+                            <div className='big-ad-name-text'>
+                              {ad.name}
+                            </div>
                             {/* Ad impressions: {ad.hourly_impressions} */}
                             <Statistic>
                               <Statistic.Value>{ad.hourly_impressions.toLocaleString()}</Statistic.Value>
                               <Statistic.Label>Ad impressions</Statistic.Label>
                             </Statistic>
-
-                          </Card>
+                          {/* </Card> */}
                         </div>
                       )
                     })
