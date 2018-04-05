@@ -4,9 +4,7 @@ import { Card, Statistic } from 'semantic-ui-react'
 
 const ShowProperties = (props) => {
 
-  console.log('ShowProperties props: ', props)
-  console.log('props.properties[0] is: ', props.properties[0])
-  console.log('props.userBuildingNames[0] is: ', props.userBuildingNames[0])
+  // console.log('ShowProperties props: ', props)
 
   return(
     <div>
