@@ -59,8 +59,8 @@ const ShowProperties = (props) => {
 
                           <PieChart data={{
                             "Hourly foot traffic": eachWindow.hourly_foot_traffic,
-                            "Hourly mobile devices": eachWindow.hourly_mobile_devices.toLocaleString(),
-                            "Hourly vehicle traffic": eachWindow.hourly_vehicle_traffic.toLocaleString(),
+                            "Hourly mobile devices": eachWindow.hourly_mobile_devices,
+                            "Hourly vehicle traffic": eachWindow.hourly_vehicle_traffic,
                           }} />
 
                             <h4>
