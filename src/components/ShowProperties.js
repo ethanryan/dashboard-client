@@ -44,7 +44,7 @@ const ShowProperties = (props) => {
                     <img src={PieChart} alt="pie chart"/>
                   </div> */}
 
-                  
+                  {/* <PieChart data={{"Blueberry": 60, "Strawberry": 40}} /> */}
 
                   <div>
                     {/* Windows: {property.windows ? property.windows.length : "property.windows.length here"} */}
@@ -53,6 +53,15 @@ const ShowProperties = (props) => {
                         // <div key={eachWindow.id} className='each-window'>
                         <div key={index} className='each-window'>
                           {/* <Card fluid color='green'> */}
+
+                            {/* <PieChart data={{"Blueberry": 60, "Strawberry": 40}} /> */}
+
+                          <PieChart data={{
+                            "Hourly foot traffic": eachWindow.hourly_foot_traffic,
+                            "Hourly mobile devices": eachWindow.hourly_mobile_devices.toLocaleString(),
+                            "Hourly vehicle traffic": eachWindow.hourly_vehicle_traffic.toLocaleString(),
+                          }} />
+
                             <h4>
                               Window info:
                             </h4>
