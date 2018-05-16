@@ -2,7 +2,8 @@ import React from 'react'
 
 import { Card, Statistic } from 'semantic-ui-react'
 
-import ReactChartkick, { LineChart, PieChart } from 'react-chartkick'
+// import ReactChartkick, { LineChart, PieChart } from 'react-chartkick'
+import ReactChartkick, { PieChart } from 'react-chartkick'
 import Chart from 'chart.js'
 
 // import PieChart from '../assets/PieChart.svg'
