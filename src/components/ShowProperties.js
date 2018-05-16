@@ -2,8 +2,12 @@ import React from 'react'
 
 import { Card, Statistic } from 'semantic-ui-react'
 
-import PieChart from '../assets/PieChart.svg'
+import ReactChartkick, { LineChart, PieChart } from 'react-chartkick'
+import Chart from 'chart.js'
 
+// import PieChart from '../assets/PieChart.svg'
+
+ReactChartkick.addAdapter(Chart)
 
 const ShowProperties = (props) => {
 
@@ -36,9 +40,11 @@ const ShowProperties = (props) => {
                   </Card.Description>
 
                   {/* <br></br> */}
-                  <div className="pie-chart-img">
+                  {/* <div className="pie-chart-img">
                     <img src={PieChart} alt="pie chart"/>
-                  </div>
+                  </div> */}
+
+                  
 
                   <div>
                     {/* Windows: {property.windows ? property.windows.length : "property.windows.length here"} */}
