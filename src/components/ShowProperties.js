@@ -2,8 +2,13 @@ import React from 'react'
 
 import { Card, Statistic } from 'semantic-ui-react'
 
-import PieChart from '../assets/PieChart.svg'
+// import ReactChartkick, { LineChart, PieChart } from 'react-chartkick'
+import ReactChartkick, { PieChart } from 'react-chartkick'
+import Chart from 'chart.js'
 
+// import PieChart from '../assets/PieChart.svg'
+
+ReactChartkick.addAdapter(Chart)
 
 const ShowProperties = (props) => {
 
@@ -36,9 +41,11 @@ const ShowProperties = (props) => {
                   </Card.Description>
 
                   {/* <br></br> */}
-                  <div className="pie-chart-img">
+                  {/* <div className="pie-chart-img">
                     <img src={PieChart} alt="pie chart"/>
-                  </div>
+                  </div> */}
+
+                  {/* <PieChart data={{"Blueberry": 60, "Strawberry": 40}} /> */}
 
                   <div>
                     {/* Windows: {property.windows ? property.windows.length : "property.windows.length here"} */}
@@ -47,6 +54,15 @@ const ShowProperties = (props) => {
                         // <div key={eachWindow.id} className='each-window'>
                         <div key={index} className='each-window'>
                           {/* <Card fluid color='green'> */}
+
+                            {/* <PieChart data={{"Blueberry": 60, "Strawberry": 40}} /> */}
+
+                          <PieChart data={{
+                            "Hourly foot traffic": eachWindow.hourly_foot_traffic,
+                            "Hourly mobile devices": eachWindow.hourly_mobile_devices,
+                            "Hourly vehicle traffic": eachWindow.hourly_vehicle_traffic,
+                          }} />
+
                             <h4>
                               Window info:
                             </h4>
