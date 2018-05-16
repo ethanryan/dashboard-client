@@ -11,6 +11,12 @@ import Chart from 'chart.js'
 ReactChartkick.addAdapter(Chart)
 
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
 const ShowAds = (props) => {
 
   // console.log('ShowAds props: ', props)
@@ -35,13 +41,23 @@ const ShowAds = (props) => {
 
                           {/* <LineChart data={[[new Date(), 5], [1368174456, 4], ["2017-01-01 00:00:00 UTC", 7]]} /> */}
 
-                          <LineChart data={[
+                          {/* <LineChart data={[
                             [new Date(new Date().setDate(new Date().getDate()-42)), (ad.hourly_impressions / 3)],
                             [new Date(new Date().setDate(new Date().getDate()-35)), (ad.hourly_impressions - 75)],
                             [new Date(new Date().setDate(new Date().getDate()-28)), (ad.hourly_impressions - 150)],
                             [new Date(new Date().setDate(new Date().getDate()-21)), (ad.hourly_impressions / 2)],
                             [new Date(new Date().setDate(new Date().getDate()-14)), (ad.hourly_impressions + 100)],
                             [new Date(new Date().setDate(new Date().getDate()-7)), ad.hourly_impressions - 175],
+                            [new Date(), ad.hourly_impressions]
+                          ]} /> */}
+
+                          <LineChart data={[
+                            [new Date(new Date().setDate(new Date().getDate()-42)), (ad.hourly_impressions + getRandomInt(-ad.hourly_impressions, ad.hourly_impressions))],
+                            [new Date(new Date().setDate(new Date().getDate()-35)), (ad.hourly_impressions + getRandomInt(-ad.hourly_impressions, ad.hourly_impressions))],
+                            [new Date(new Date().setDate(new Date().getDate()-28)), (ad.hourly_impressions + getRandomInt(-ad.hourly_impressions, ad.hourly_impressions))],
+                            [new Date(new Date().setDate(new Date().getDate()-21)), (ad.hourly_impressions + getRandomInt(-ad.hourly_impressions, ad.hourly_impressions))],
+                            [new Date(new Date().setDate(new Date().getDate()-14)), (ad.hourly_impressions + getRandomInt(-ad.hourly_impressions, ad.hourly_impressions))],
+                            [new Date(new Date().setDate(new Date().getDate()-7)), (ad.hourly_impressions + getRandomInt(-ad.hourly_impressions, ad.hourly_impressions))],
                             [new Date(), ad.hourly_impressions]
                           ]} />
 
