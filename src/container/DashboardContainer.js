@@ -36,7 +36,7 @@ class DashboardContainer extends Component {
     console.log('-------->>>> 0. state from DashboardContainer: ', this.state)
 
     const panes = [
-      { menuItem: 'All Users (5)', render: () =>
+      { menuItem: `All Users - ${this.state.users.length}`, render: () =>
       <Tab.Pane>
         <ShowUsers
           users={this.state.users}
@@ -45,7 +45,7 @@ class DashboardContainer extends Component {
       </Tab.Pane>
     },
 
-    { menuItem: 'Property Owners (3)', render: () =>
+    { menuItem: `Property Owners - ${this.state.users.filter(user => user.buildings.length > 0).length}`, render: () =>
     <Tab.Pane>
       <ShowUsers
         users={this.state.users.filter(user => user.buildings.length > 0)}
@@ -54,7 +54,7 @@ class DashboardContainer extends Component {
     </Tab.Pane>
   },
 
-  { menuItem: 'Advertisers (2)', render: () =>
+  { menuItem: `Advertisers - ${this.state.users.filter(user => user.buildings.length < 1).length}`, render: () =>
   <Tab.Pane>
     <ShowUsers
       users={this.state.users.filter(user => user.buildings.length < 1)}
