@@ -36,7 +36,7 @@ class DashboardContainer extends Component {
     console.log('-------->>>> 0. state from DashboardContainer: ', this.state)
     // console.log('-----this user is: ', this.state.users.filter(user => user.buildings.length < 1)[0])
 
-    // const advertisers = this.state.users.filter(user => user.buildings.length < 1) //an array
+    const advertisers = this.state.users.filter(user => user.buildings.length < 1) //an array
     // console.log('-----advertisers is: ', advertisers)
 
     const panes = [
@@ -64,6 +64,9 @@ class DashboardContainer extends Component {
 
       { menuItem: `Advertisers - ${this.state.users.filter(user => user.buildings.length < 1).length}`, render: () =>
       <Tab.Pane>
+        {/* <p>
+          {advertisers.map(advertiser => advertiser.name).join(", ")}
+        </p> */}
         <ShowUsers
           users={this.state.users.filter(user => user.buildings.length < 1)}
           properties={this.state.properties}
